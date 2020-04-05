@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="geometry" targetName="geometry" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0554f2db-175a-4590-8296-ef4ec882708b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ProjectId" id="1a8X3Pz5ZsxE8CAhi0M5pwPSOxW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunManager">
+    <configuration name="geometry" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="geometry" TARGET_NAME="geometry" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="geometry" RUN_TARGET_NAME="geometry">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0554f2db-175a-4590-8296-ef4ec882708b" name="Default Changelist" comment="" />
+      <created>1586117994243</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586117994243</updated>
+      <workItem from="1586117995841" duration="1420000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1628" height="281" key="GridCell.Tab.0.bottom" timestamp="1586119432098">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="281" key="GridCell.Tab.0.bottom/0.0.1680.1050@0.0.1680.1050" timestamp="1586119432098" />
+    <state width="1628" height="281" key="GridCell.Tab.0.center" timestamp="1586119432097">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="281" key="GridCell.Tab.0.center/0.0.1680.1050@0.0.1680.1050" timestamp="1586119432097" />
+    <state width="1628" height="281" key="GridCell.Tab.0.left" timestamp="1586119432096">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="281" key="GridCell.Tab.0.left/0.0.1680.1050@0.0.1680.1050" timestamp="1586119432096" />
+    <state width="1628" height="281" key="GridCell.Tab.0.right" timestamp="1586119432098">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state width="1628" height="281" key="GridCell.Tab.0.right/0.0.1680.1050@0.0.1680.1050" timestamp="1586119432098" />
+    <state x="225" y="76" key="SettingsEditor" timestamp="1586118657412">
+      <screen x="0" y="0" width="1680" height="1050" />
+    </state>
+    <state x="225" y="76" key="SettingsEditor/0.0.1680.1050@0.0.1680.1050" timestamp="1586118657412" />
+  </component>
+</project>
