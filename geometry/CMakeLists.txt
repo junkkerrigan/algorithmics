@@ -3,4 +3,4 @@ project(geometry)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(geometry 4.cpp)
+add_executable(geometry 4.cpp 12.cpp)

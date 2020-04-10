@@ -1,3 +1,0 @@
-/Users/andriipav/junkkerrigan/study/grade-2/algorithmics/geometry/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/andriipav/junkkerrigan/study/grade-2/algorithmics/geometry/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/andriipav/junkkerrigan/study/grade-2/algorithmics/geometry/cmake-build-debug/CMakeFiles/geometry.dir
