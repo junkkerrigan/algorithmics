@@ -1,3 +1,7 @@
+//#define CURRENT true
+
+#ifdef CURRENT
+
 #include <iostream>
 #include <cmath>
 
@@ -40,3 +44,5 @@ int main() {
     }
     return 0;
 }
+
+#endif
