@@ -8,8 +8,7 @@ using namespace std;
 
 void extendedEuclideanAlgorithm(long long a, long long b, long long& x, long long& y, long long& d)
 {
-    if (b == 0)
-    {
+    if (b == 0) {
         x = 1;
         y = 0;
         d = a;
