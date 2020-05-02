@@ -1,5 +1,4 @@
 // #define CURRENT true
-#define DEV true;
 
 #ifdef CURRENT
 
