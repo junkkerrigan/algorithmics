@@ -10,9 +10,12 @@
 
 using namespace std;
 
-const double EPS = 1e-7;
+const double EPS = 1e-4;
 
-bool areEqual(double a, double b) {
+bool areEqual(double a, double b, bool details = false) {
+    if (details) {
+        cout << a - b << '\n';
+    }
     return fabs(a - b) < EPS;
 }
 
@@ -234,6 +237,7 @@ double pictureHeight;
 double cutLength() {
     Segment fallenSymbol(symbolBase, symbolTop);
     Segment pictureBase(pictureLeft, pictureRight);
+    double symbolHeight = fallenSymbol.length();
     Line pictureBaseLine(pictureBase);
     Line fallenSymbolLine(fallenSymbol);
 
@@ -253,18 +257,41 @@ double cutLength() {
         try {
             Point intersectionPoint(fallenSymbol.intersectionPointWith(pictureBase));
 
-            double distFromSymbolBaseToCut = dist(symbolBase, intersectionPoint);
-            double symbolHeight = fallenSymbol.length();
-            double cutLength = sqrt(pow(symbolHeight, 2) - pow(distFromSymbolBaseToCut, 2));
+            double distToCut = dist(symbolBase, intersectionPoint);
+            double cutLength = sqrt(pow(symbolHeight, 2) - pow(distToCut, 2));
 
-//            cout << distFromSymbolBaseToCut << ' ' << symbolHeight << ' ' << cutLength << '\n';
+//            cout << distToCut << ' ' << symbolHeight << ' ' << cutLength << '\n';
             return fmin(pictureHeight, cutLength);
         } catch (const char*) {
             return 0;
         }
     }
+    if (!fallenSymbol.onLineWith(pictureBase)) {
+        return 0;
+    }
+    if (pictureBase.contains(fallenSymbol)) {
+        return fmin(symbolHeight, pictureHeight);
+    }
 
-    return 0;
+    double distToA = dist(symbolBase, pictureBase.A);
+    double distToB = dist(symbolBase, pictureBase.B);
+    double cutLength;
+
+    if (distToA < distToB) {
+        if (symbolHeight <= distToA) {
+            return 0;
+        }
+        cutLength = sqrt(pow(symbolHeight, 2) - pow(distToA, 2));
+    } else {
+        if (symbolHeight <= distToB) {
+            return 0;
+        }
+        cutLength = sqrt(pow(symbolHeight, 2) - pow(distToB, 2));
+    }
+
+    return fmin(pictureHeight, cutLength);
+
+    // TODO: handle all cases when are on one line
 }
 
 
@@ -292,6 +319,14 @@ int main() {
 
 #endif
 
+void print(vector<double> v) {
+    for(int i = 0; i < v.size(); i++) {
+        cout << v[i];
+        if (i < v.size() - 1) {
+            cout << ' ';
+        }
+    }
+}
 void test() {
     vector<vector<double>> testCases = {
         // 0
@@ -310,6 +345,57 @@ void test() {
         { 0, 0, 2, 2, 1, 0, 1, 3, 1234 },
         // 7
         { 0, 0, 2, 2, 1, 0, 1, 3, 0.5 },
+        // 8
+        { 1, 1, 6, 1, 4, 0, 4, 5, 6 },
+        // 9
+        { -1, -1, 0, 1, 0, 2, 1, -1, 6231 },
+        // 10
+        { 0, 0, 2, 2, 1, 1, 5, 5, 10 },
+        // 11
+        { 0, 0, 2, 2, 1, 1, 5, 5, 1 },
+        // 12
+        { 2, 0, 2, 2, 2, 1, 2, 5, 1.7 },
+        // 13
+        { 2, 0, 2, 2, 2, 1, 2, 5, 17 },
+        // 14
+        { 2, -1, 2, 1, 2, -2, 2, 2, 1 },
+        // 15
+        { 2, 0, 2, 2, 2, 1, 2, 5, 26 },
+    };
+
+    vector<double> expected = {
+        // 0
+        2.44949,
+        // 1
+        0.500,
+        // 2
+        0.000,
+        // 3
+        0.000,
+        // 4
+        0.000,
+        // 5
+        0.000,
+        // 6
+        2.44949,
+        // 7
+        0.500,
+        // 8
+        4.000,
+        // 9
+        0.000,
+        // 10
+        2.44949,
+        // 11
+        1.000,
+        // 12
+        1.700,
+        // 13
+        1.732,
+        // 14
+        1.000,
+        // 15
+        2.000,
     };
 
     for(int i = 0; i < testCases.size(); i++) {
@@ -323,7 +409,16 @@ void test() {
         pictureRight.y = testCases[i][7];
         pictureHeight = testCases[i][8];
 
-        cout << '#' << i << ": " << cutLength() << '\n';
+        double expectedValue = expected[i];
+        double receivedValue = cutLength();
+
+        cout
+            << "#" << i << '\n'
+            << "given: "; print(testCases[i]); cout << '\n'
+            << "expected: " << fixed << setprecision(3) << expectedValue << '\n'
+            << "received: " << fixed << setprecision(3) << receivedValue << '\n'
+            << "passed: " << (areEqual(expectedValue, receivedValue) ? "YES" : "NO") << '\n'
+            << '\n';
     }
 }
 
