@@ -12,3 +12,4 @@
 - Euclidean algorithms : *done* ✅
 - Geometry: *done* ✅
 - Probability theory: *done* ✅
+- Long arithmetic: *done* ✅
